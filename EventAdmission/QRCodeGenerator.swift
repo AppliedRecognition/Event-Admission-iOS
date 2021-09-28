@@ -8,10 +8,15 @@
 import Foundation
 import UIKit
 
+/// QR code generator
 public class QRCodeGenerator {
     
+    /// Default singleton instance of the QR code generator
     public static let `default` = QRCodeGenerator()
     
+    /// Generate a QR code image
+    /// - Parameter payload: Payload to encode in the QR code
+    /// - Returns: Image with QR code
     public func generateQRCode(payload: String) throws -> UIImage {
         guard let data = payload.data(using: .utf8) else {
             throw QRCodeGenerationError.failedToConvertPayloadToData

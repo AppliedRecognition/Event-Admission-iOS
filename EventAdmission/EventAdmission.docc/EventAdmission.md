@@ -1,13 +1,25 @@
 # ``EventAdmission``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+Framework that facilitates admitting attendees to events
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+- Helps to keep track of attendees admitted to an event
+- Resolve cases where multiple attendees match a biometric entry requirement
 
 ## Topics
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+### Managing event admission
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+- ``Event``
+
+### Resolving attendee identity
+
+- ``IdentifiedUserSelector``
+- ``QRCodeReader``
+- ``QRCodeGenerator``
+
+### Scanning QR codes
+
+- ``TicketScannerViewController``
+- ``TicketScannerViewControllerDelegate``

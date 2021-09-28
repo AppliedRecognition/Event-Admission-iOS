@@ -8,9 +8,12 @@
 import UIKit
 import AVFoundation
 
-public class TicketScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+/// View controller that presents a camera and scans a QR code
+open class TicketScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    /// View controller delegate
     public weak var delegate: TicketScannerViewControllerDelegate?
+    /// Position of the camera on the device (default is front)
     public var cameraPosition: AVCaptureDevice.Position = .front
     lazy var scanQueue = DispatchQueue(label: "com.appliedrec.ticketScan")
     let captureSession = AVCaptureSession()
@@ -35,13 +38,10 @@ public class TicketScannerViewController: UIViewController, AVCaptureMetadataOut
         }
     }
     
-    private var sessionRunningObserveContext = 0
-    
     private var observeSession: Bool = false {
         didSet {
             if oldValue != observeSession && observeSession {
                 NotificationCenter.default.addObserver(self, selector: #selector(sessionRuntimeError), name: Notification.Name("AVCaptureSessionRuntimeErrorNotification"), object: self.captureSession)
-                
                 /*
                  A session can only run when the app is full screen. It will be interrupted
                  in a multi-app layout, introduced in iOS 9, see also the documentation of
@@ -56,6 +56,7 @@ public class TicketScannerViewController: UIViewController, AVCaptureMetadataOut
         }
     }
     
+    /// View controller initializer
     public init() {
         let frameworkBundle = Bundle(for: type(of: self))
         guard let bundleURL = frameworkBundle.url(forResource: "EventAdmissionResources", withExtension: "bundle") else {
@@ -67,13 +68,8 @@ public class TicketScannerViewController: UIViewController, AVCaptureMetadataOut
         super.init(nibName: "TicketScannerViewController", bundle: bundle)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -97,6 +93,8 @@ public class TicketScannerViewController: UIViewController, AVCaptureMetadataOut
             }
         }
     }
+    
+    // MARK: -
     
     @objc func sessionRuntimeError(notification: NSNotification) {
         guard let errorValue = notification.userInfo?[AVCaptureSessionErrorKey] as? NSError else {
@@ -217,6 +215,4 @@ public class TicketScannerViewController: UIViewController, AVCaptureMetadataOut
             self.scanDidSucceed(ticketIdentifier: codeValue)
         }
     }
-    
-    // MARK: -
 }

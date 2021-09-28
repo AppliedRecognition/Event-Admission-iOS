@@ -9,11 +9,17 @@ import Foundation
 import UIKit
 import CoreData
 
+/// Class representing a ticketed event
 public class Event {
     
+    /// Event identifier
     public let identifier: String
     private let persistentContainer: NSPersistentContainer
     
+    /// Create event
+    /// - Parameters:
+    ///   - identifier: Event identifier
+    ///   - completion: Completion callback
     public static func create(identifier: String, completion: @escaping (Result<Event,Error>) -> Void) {
         do {
             let modelName = "AdmissionLog"
@@ -56,7 +62,12 @@ public class Event {
         self.persistentContainer = persistentContainer
     }
     
-    public func admitAttendee(_ attendee: String, faceImage: UIImage, completion: @escaping (Result<Void,Error>) -> Void) {
+    /// Admit an event attendee
+    /// - Parameters:
+    ///   - attendee: Attendee identifier
+    ///   - faceImage: Image of the attendee's face
+    ///   - completion: Completion callback
+    public func admitAttendee(_ attendee: String, faceImage: UIImage?, completion: @escaping (Result<Void,Error>) -> Void) {
         self.persistentContainer.performBackgroundTask { context in
             do {
                 context.mergePolicy = NSMergePolicy.overwrite
@@ -73,7 +84,7 @@ public class Event {
                 record.admissionTime = Date()
                 record.attendee = attendee
                 record.event = self.identifier
-                record.image = faceImage.jpegData(compressionQuality: 0.9)
+                record.image = faceImage?.jpegData(compressionQuality: 0.9)
                 try context.save()
                 OperationQueue.main.addOperation {
                     completion(.success(()))
@@ -86,6 +97,9 @@ public class Event {
         }
     }
     
+    /// Get the time the given attendee was admitted to the event
+    /// - Parameter attendee: Attendee identifier
+    /// - Returns: Date the attendee was admitted to the event or `nil` if the attendee hasn't yet been admitted
     public func admissionTimeForAttendee(_ attendee: String) throws -> Date? {
         let request: NSFetchRequest = NSFetchRequest<AdmissionRecord>(entityName: "AdmissionRecord")
         request.returnsDistinctResults = true
@@ -96,6 +110,8 @@ public class Event {
         return nil
     }
     
+    /// Get an admission log
+    /// - Returns: Array of admission records
     public func admissionLog() throws -> [AdmissionRecord] {
         let request: NSFetchRequest = NSFetchRequest<AdmissionRecord>(entityName: "AdmissionRecord")
         request.returnsDistinctResults = true
@@ -104,6 +120,8 @@ public class Event {
         return try self.persistentContainer.viewContext.fetch(request)
     }
     
+    /// Clear the event's admission log
+    /// - Parameter completion: Completion callback
     public func clearAdmissionLog(completion: @escaping (Result<Void,Error>) -> Void) {
         self.persistentContainer.performBackgroundTask { context in
             do {
