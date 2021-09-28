@@ -9,7 +9,7 @@ import Foundation
 
 public protocol TicketScannerViewControllerDelegate: AnyObject {
     
-    func ticketScannerViewController(_ ticketScannerViewController: TicketScannerViewController, didScanCode: String)
+    func ticketScannerViewController(_ ticketScannerViewController: TicketScannerViewController, didScanCode code: String)
     
     func ticketScannerViewController(_ ticketScannerViewController: TicketScannerViewController, didFailWithError error: Error)
 }

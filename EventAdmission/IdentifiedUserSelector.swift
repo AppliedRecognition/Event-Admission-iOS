@@ -11,14 +11,17 @@ public class IdentifiedUserSelector {
     
     public var minScoreDistance: Float = 0.2
     
-    public func selectBestMatch(candidates: [(String,Float)]) -> String? {
+    public init() {
+    }
+    
+    public func selectBestMatch(candidates: [String:Float]) -> String? {
         if candidates.isEmpty {
             return nil
         }
         if candidates.count == 1 {
             return candidates.first!.0
         }
-        let sortedCandidates = candidates.sorted(by: {
+        let sortedCandidates = candidates.map({ ($0,$1) }).sorted(by: {
             $0.1 > $1.1
         })
         if sortedCandidates[0].1 - sortedCandidates[1].1 > self.minScoreDistance {
