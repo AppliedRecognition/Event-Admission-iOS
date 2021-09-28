@@ -33,6 +33,8 @@
 		3BDA813B2703271E00DA4813 /* EventAdmission.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDA80DD2701E14C00DA4813 /* EventAdmission.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3BDA814027034A1800DA4813 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA813F27034A1800DA4813 /* RegistrationViewController.swift */; };
 		3BDA814227034F1C00DA4813 /* AdmissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA814127034F1C00DA4813 /* AdmissionViewController.swift */; };
+		3BEDA131270364D20065979E /* AdmissionLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEDA130270364D20065979E /* AdmissionLogViewController.swift */; };
+		3BEDA1332703661E0065979E /* AdmissionRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEDA1322703661E0065979E /* AdmissionRecordCell.swift */; };
 		3C67247888C0B58511BD6731 /* Pods_EventAdmissionSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5656AADF6B63E9BABE79D5C /* Pods_EventAdmissionSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		3BDA8138270326B100DA4813 /* Ver-ID identity.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ver-ID identity.p12"; sourceTree = "<group>"; };
 		3BDA813F27034A1800DA4813 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		3BDA814127034F1C00DA4813 /* AdmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionViewController.swift; sourceTree = "<group>"; };
+		3BEDA130270364D20065979E /* AdmissionLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionLogViewController.swift; sourceTree = "<group>"; };
+		3BEDA1322703661E0065979E /* AdmissionRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionRecordCell.swift; sourceTree = "<group>"; };
 		68E810BA6C3C0EB5ACDD13B6 /* Pods-EventAdmissionSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventAdmissionSample.debug.xcconfig"; path = "Target Support Files/Pods-EventAdmissionSample/Pods-EventAdmissionSample.debug.xcconfig"; sourceTree = "<group>"; };
 		7545D4E7D88E98049B36F1F8 /* Pods-EventAdmissionSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventAdmissionSample.release.xcconfig"; path = "Target Support Files/Pods-EventAdmissionSample/Pods-EventAdmissionSample.release.xcconfig"; sourceTree = "<group>"; };
 		F5656AADF6B63E9BABE79D5C /* Pods_EventAdmissionSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventAdmissionSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,11 +222,13 @@
 				3BDA812827026DD700DA4813 /* SceneDelegate.swift */,
 				3BDA812A27026DD700DA4813 /* ViewController.swift */,
 				3BDA812C27026DD700DA4813 /* Main.storyboard */,
+				3BEDA130270364D20065979E /* AdmissionLogViewController.swift */,
 				3BDA812F27026DDB00DA4813 /* Assets.xcassets */,
 				3BDA813127026DDB00DA4813 /* LaunchScreen.storyboard */,
 				3BDA813427026DDB00DA4813 /* Info.plist */,
 				3BDA813F27034A1800DA4813 /* RegistrationViewController.swift */,
 				3BDA814127034F1C00DA4813 /* AdmissionViewController.swift */,
+				3BEDA1322703661E0065979E /* AdmissionRecordCell.swift */,
 			);
 			path = EventAdmissionSample;
 			sourceTree = "<group>";
@@ -497,9 +503,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BDA812B27026DD700DA4813 /* ViewController.swift in Sources */,
+				3BEDA1332703661E0065979E /* AdmissionRecordCell.swift in Sources */,
 				3BDA812727026DD700DA4813 /* AppDelegate.swift in Sources */,
 				3BDA814027034A1800DA4813 /* RegistrationViewController.swift in Sources */,
 				3BDA814227034F1C00DA4813 /* AdmissionViewController.swift in Sources */,
+				3BEDA131270364D20065979E /* AdmissionLogViewController.swift in Sources */,
 				3BDA812927026DD700DA4813 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

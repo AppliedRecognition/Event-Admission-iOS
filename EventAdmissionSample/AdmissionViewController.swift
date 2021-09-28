@@ -107,16 +107,24 @@ class AdmissionViewController: UIViewController, VerIDSessionDelegate, TicketSca
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = .none
                 dateFormatter.timeStyle = .medium
-                self.showMessage("\(self.userName!) has already been admitted to the event at \(dateFormatter.string(from: time))", title: "Stop")
+                self.showMessage("\(self.userName!) has already been admitted to the event at \(dateFormatter.string(from: time))", title: "Stop", actions: [UIAlertAction(title: "OK", style: .default), UIAlertAction(title: "Show admission log", style: .default, handler: { _ in
+                    self.performSegue(withIdentifier: "log", sender: nil)
+                })])
             default:
                 self.showMessage("Admission failed", title: "Stop")
             }
         }
     }
     
-    func showMessage(_ message: String, title: String) {
+    func showMessage(_ message: String, title: String, actions: [UIAlertAction]? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        if let `actions` = actions, !actions.isEmpty {
+            actions.forEach({
+                alert.addAction($0)
+            })
+        } else {
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+        }
         self.present(alert, animated: true)
     }
     
