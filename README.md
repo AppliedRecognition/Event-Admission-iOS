@@ -1,3 +1,5 @@
+![Cocoapods](https://img.shields.io/cocoapods/v/EventAdmission)
+
 # Event Admission
 
 iOS framework that facilitates admitting attendees to events
