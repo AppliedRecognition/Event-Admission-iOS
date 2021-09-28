@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BCBB6C22703801000A6B590 /* AdmissionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCBB6C12703801000A6B590 /* AdmissionRecord.swift */; };
 		3BDA80E22701E14C00DA4813 /* EventAdmission.docc in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA80E12701E14C00DA4813 /* EventAdmission.docc */; };
 		3BDA80E82701E14C00DA4813 /* EventAdmission.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BDA80DD2701E14C00DA4813 /* EventAdmission.framework */; };
 		3BDA80ED2701E14C00DA4813 /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA80EC2701E14C00DA4813 /* QRCodeTests.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3BCBB6C12703801000A6B590 /* AdmissionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionRecord.swift; sourceTree = "<group>"; };
 		3BDA80DD2701E14C00DA4813 /* EventAdmission.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EventAdmission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BDA80E02701E14C00DA4813 /* EventAdmission.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventAdmission.h; sourceTree = "<group>"; };
 		3BDA80E12701E14C00DA4813 /* EventAdmission.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EventAdmission.docc; sourceTree = "<group>"; };
@@ -107,7 +109,7 @@
 		3BDA814127034F1C00DA4813 /* AdmissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionViewController.swift; sourceTree = "<group>"; };
 		3BEDA130270364D20065979E /* AdmissionLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionLogViewController.swift; sourceTree = "<group>"; };
 		3BEDA1322703661E0065979E /* AdmissionRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmissionRecordCell.swift; sourceTree = "<group>"; };
-		3BEDA1342703744E0065979E /* EventAdmission.podspec */ = {isa = PBXFileReference; lastKnownFileType = file; path = EventAdmission.podspec; sourceTree = SOURCE_ROOT; };
+		3BEDA1342703744E0065979E /* EventAdmission.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = EventAdmission.podspec; sourceTree = SOURCE_ROOT; };
 		68E810BA6C3C0EB5ACDD13B6 /* Pods-EventAdmissionSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventAdmissionSample.debug.xcconfig"; path = "Target Support Files/Pods-EventAdmissionSample/Pods-EventAdmissionSample.debug.xcconfig"; sourceTree = "<group>"; };
 		7545D4E7D88E98049B36F1F8 /* Pods-EventAdmissionSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EventAdmissionSample.release.xcconfig"; path = "Target Support Files/Pods-EventAdmissionSample/Pods-EventAdmissionSample.release.xcconfig"; sourceTree = "<group>"; };
 		F5656AADF6B63E9BABE79D5C /* Pods_EventAdmissionSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EventAdmissionSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +197,7 @@
 				3BDA811827024AA100DA4813 /* IdentifiedUserSelector.swift */,
 				3BDA811A2702586100DA4813 /* QRCodeGenerator.swift */,
 				3BDA811C270259AC00DA4813 /* QRCodeReader.swift */,
+				3BCBB6C12703801000A6B590 /* AdmissionRecord.swift */,
 			);
 			path = EventAdmission;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				3BDA811927024AA100DA4813 /* IdentifiedUserSelector.swift in Sources */,
 				3BDA811B2702586100DA4813 /* QRCodeGenerator.swift in Sources */,
 				3BDA8107270215F300DA4813 /* AdmissionLog.xcdatamodeld in Sources */,
+				3BCBB6C22703801000A6B590 /* AdmissionRecord.swift in Sources */,
 				3BDA80FE2701E64C00DA4813 /* TicketScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,6 +5,7 @@ Pod::Spec.new do |spec|
   spec.summary      = "iOS framework that facilitates admitting attendees to events"
   spec.homepage     = "https://github.com/AppliedRecognition/Event-Admission-iOS"
   spec.license      = "MIT"
+  spec.swift_version = "5"
   spec.author       = "Jakub Dolejs"
   spec.platform     = :ios, "13.0"
   spec.source       = { :git => "https://github.com/AppliedRecognition/Event-Admission-iOS.git", :tag => "v#{spec.version}" }
